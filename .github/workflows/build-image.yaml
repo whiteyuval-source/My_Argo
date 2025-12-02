@@ -28,7 +28,8 @@ jobs:
           context: ./src  # Path to the Dockerfile and build context
           push: true
           tags: |
-            whiteyuval/app-node-new-yuv:${{ github.sha }}
+           ## whiteyuval/app-node-new-yuv:${{ github.sha }}
+           whiteyuval/app-node-new-yuv:killme-09
 
       - name: Logout from Docker Hub
         run: docker logout
