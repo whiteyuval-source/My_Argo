@@ -3,7 +3,7 @@ name: Docker Build and Push
 on:
   push:
     branches:
-      - <set your branch>  # Replace with your branch name
+      - uv_br  # Replace with your branch name
 
 jobs:
   build-and-push:
@@ -28,7 +28,7 @@ jobs:
           context: ./lesson-cicd/practice-04  # Path to the Dockerfile and build context
           push: true
           tags: |
-            <your docker profile>/app-node:${{ github.sha }}
+            whiteyuval/app-node:${{ github.sha }}
 
       - name: Logout from Docker Hub
         run: docker logout
