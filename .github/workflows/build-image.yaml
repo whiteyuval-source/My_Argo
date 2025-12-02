@@ -3,7 +3,7 @@ name: Docker Build and Push
 on:
   push:
     branches:
-      - main  # Replace with your branch name
+      - yuv-01  # Replace with your branch name
 
 jobs:
   build-and-push:
@@ -28,7 +28,7 @@ jobs:
           context: ./src  # Path to the Dockerfile and build context
           push: true
           tags: |
-            whiteyuval/app-node:${{ github.sha }}
+            whiteyuval/app-node-new-yuv:${{ github.sha }}
 
       - name: Logout from Docker Hub
         run: docker logout
