@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-node
+  labels:
+    app: app-node
+spec:
+  containers:
+    - name: app-node
+      image: whiteyuval/app-node-new-yuv:killme-09
+      ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-node
+spec:
+  type: LoadBalancer
+  selector:
+    app: app-node
+  ports:
+    - name: http
+      port: 80
+      targetPort: 3000TBD
